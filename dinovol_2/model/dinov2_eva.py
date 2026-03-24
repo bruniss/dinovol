@@ -518,7 +518,7 @@ class Eva(nn.Module):
         if self.reg_token is not None:
             trunc_normal_(self.reg_token, std=.02)
         if self.mask_token is not None:
-            trunc_normal_(self.mask_token, std=.02)
+            nn.init.zeros_(self.mask_token)
         
         # Inline fix_init_weight
         def rescale(param, layer_id):
